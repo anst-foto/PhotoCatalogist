@@ -1,0 +1,16 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+             x:Class="PhotoCatalogistApp.Desktop.Components.InputComponent"
+             x:Name="Component">
+    <Grid ColumnDefinitions="*, 3*">
+        <Label Content="{Binding ElementName=Component, Path=Label, Mode=OneWay}"
+               Target="{Binding ElementName=Input}"
+               Grid.Column="0" />
+        <TextBox x:Name="Input"
+                 Text="{Binding ElementName=Component, Path=Text, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                 Watermark="{Binding ElementName=Component, Path=Placeholder, Mode=OneWay}"
+                 IsReadOnly="{Binding ElementName=Component, Path=IsReadOnly, Mode=OneWay}"
+                 Grid.Column="1" />
+    </Grid>
+</UserControl>

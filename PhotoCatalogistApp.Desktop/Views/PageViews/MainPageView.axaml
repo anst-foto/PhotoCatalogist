@@ -1,0 +1,38 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PhotoCatalogistApp.Desktop.ViewModels"
+             xmlns:c="using:PhotoCatalogistApp.Desktop.Components"
+
+             x:Class="PhotoCatalogistApp.Desktop.Views.MainPageView"
+             x:DataType="vm:MainPageViewModel">
+    <UserControl.DataContext>
+        <vm:MainPageViewModel />
+    </UserControl.DataContext>
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <c:InputComponent x:Name="InputDirectory"
+                              Label="Директория:"
+                              Text="{Binding DirectoryPath}"
+                              Placeholder="Путь к фотографиям"
+                              IsReadOnly="False" />
+            <Button x:Name="ButtonOpen"
+                    Content="Выбрать..."
+                    Command="{Binding Path=CommandSelectDirectory}" />
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical">
+            <Button x:Name="ButtonRun"
+                    Content="Переименовать"
+                    Command="{Binding CommandRenameFiles}"/>
+
+            <Grid>
+                <ProgressBar Minimum="{Binding Path=MinProgress}"
+                             Maximum="{Binding Path=MaxProgress}"
+                             Value="{Binding Path=Progress}"
+                             Height="25"/>
+                <TextBlock Text="{Binding Path=Progress}"/>
+            </Grid>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
