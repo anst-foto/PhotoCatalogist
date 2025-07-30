@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PhotoCatalogistApp.Desktop.ViewModels"
+
+        x:Class="PhotoCatalogistApp.Desktop.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PhotoCatalogistApp.Desktop">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <ContentControl Content="{Binding Path=CurrentPage}" />
+</Window>
