@@ -15,6 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoCatalogistApp.CoreLib.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoCatalogistApp.Desktop", "PhotoCatalogistApp.Desktop\PhotoCatalogistApp.Desktop.csproj", "{B337A273-5719-43F1-86BF-DEFC6C497322}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{98FE0889-EFA7-475B-A23B-23730EEDB1B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{22FB1581-3427-4A05-986E-AEDE190C488B}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet-test.yml = .github\workflows\dotnet-test.yml
+		.github\workflows\dotnet-format.yml = .github\workflows\dotnet-format.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,5 +41,8 @@ Global
 		{B337A273-5719-43F1-86BF-DEFC6C497322}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B337A273-5719-43F1-86BF-DEFC6C497322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B337A273-5719-43F1-86BF-DEFC6C497322}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22FB1581-3427-4A05-986E-AEDE190C488B} = {98FE0889-EFA7-475B-A23B-23730EEDB1B4}
 	EndGlobalSection
 EndGlobal
